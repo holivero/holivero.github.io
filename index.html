@@ -10,19 +10,19 @@
         body {
             font-family: Arial, sans-serif;
             color: #333;
-            line-height: 1.6; /* Mejora la legibilidad */
+            line-height: 1.6;
         }
 
         /* Contenedor principal para limitar el ancho y centrar el contenido */
         .content-container {
-            max-width: 900px;  /* Ancho máximo del contenido (ajústalo si quieres) */
-            margin: 0 auto;    /* Centra el contenedor horizontalmente */
-            padding: 20px;     /* Espacio interno alrededor del contenido */
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
         }
         
         /* Justificación y alineación del texto */
-        p {
-            text-align: justify; /* ¡Alinea el texto a izquierda y derecha! */
+        p, li {
+            text-align: justify; /* APLICA JUSTIFICACIÓN A PÁRRAFOS Y LISTAS */
         }
 
         /* Estilos para los títulos */
@@ -32,18 +32,18 @@
 
         /* Estilos para la imagen de perfil */
         .profile-image {
-            float: left;        /* Hace que la imagen flote a la izquierda */
-            margin-right: 25px; /* Espacio a la derecha de la imagen para separar del texto */
-            margin-bottom: 15px; /* Espacio debajo de la imagen */
-            max-width: 200px;   /* Ancho máximo de la imagen, ajusta si es necesario */
+            float: left;
+            margin-right: 25px;
+            margin-bottom: 15px;
+            max-width: 200px;
             height: auto;       
             border-radius: 8px; 
         }
 
         /* Un 'clear' para asegurar que el contenido posterior no flote junto a la imagen */
         .clear-float {
-            clear: both; /* Limpia ambos lados del flotado */
-            margin-bottom: 20px; 
+            clear: both;
+            margin-bottom: 20px;
         }
 
         /* Estilos para los enlaces */
@@ -64,7 +64,7 @@
         <h1>Héctor Olivero Q.</h1>
         
         <img 
-            src="me.jpeg" 
+            src="https://via.placeholder.com/200x260?text=Tu+Foto+Aqui" 
             alt="Retrato de Héctor Olivero Q." 
             class="profile-image"
         >
@@ -83,43 +83,47 @@
         <h2>Research projects</h2>
         <p> Currently I am a researcher at the following projects:</p>
         <ol reversed>
-            <li>MathAmSud project Nº240054: "Cha2man: Stochasticity & Chaos in Multiscale Phenomena" led by Mireille Bossy.</li>
-            <li>ANID Fondecyt Regular Nº240054: "Propagation of chaos for mean-field interacting particle systems in mathematical physics and mathematical biology" led by Joaquín Fontbona. </li>
-            <li>INRIA Associated Team: "Swam: Seas, waves and Ecosystems" led by Mireille Bossy.</li>
-            <li>ANID Exploracion project 13220168: “Biological and Quantum Open System Dynamics: evolution, innovation and mathematical foundations” led by Rolando Rebolledo.</li>
+            <li><strong>MathAmSud project Nº240054: "Cha2man: Stochasticity & Chaos in Multiscale Phenomena"</strong> led by Mireille Bossy.</li>
+            <li><strong>ANID Fondecyt Regular Nº240054: "Propagation of chaos for mean-field interacting particle systems in mathematical physics and mathematical biology"</strong> led by Joaquín Fontbona. </li>
+            <li><strong>INRIA Associated Team: "Swam: Seas, waves and Ecosystems"</strong> led by Mireille Bossy.</li>
+            <li><strong>ANID Exploracion project 13220168: “Biological and Quantum Open System Dynamics: evolution, innovation and mathematical foundations”</strong> led by Rolando Rebolledo.</li>
         </ol>
 
         <h2>Publications</h2>
         <ol reversed>
-            <li>A hypothesis test for the domain of attraction of a random variable.
+            <li><strong>A hypothesis test for the domain of attraction of a random variable.</strong>
                 Olivero, Héctor; Talay Denis.
-                ESAIM: PS, 28 (2024) 292-328. doi: https://doi.org/10.1051/ps/2024010. Available also in Arxiv.</li>
+                ESAIM: PS, 28 (2024) 292-328. 
+                doi: <a href="https://doi.org/10.1051/ps/2024010" target="_blank">https://doi.org/10.1051/ps/2024010</a>. 
+                Available also in <a href="https://arxiv.org/abs/240054" target="_blank">Arxiv</a>.</li>
             
-            <li>Synchronization of stochastic mean field networks of Hodgkin-Huxley neurons with noisy channels.
+            <li><strong>Synchronization of stochastic mean field networks of Hodgkin-Huxley neurons with noisy channels.</strong>
                 Bossy, Mireille; Fontbona, Joaquín; Olivero, Héctor.
-                Journal of Mathematical Biology, 78(6), 1771-1820. doi:10.1007/s00285-019-01326-7.
-                Also available in Arxiv.</li>
+                Journal of Mathematical Biology, 78(6), 1771-1820. 
+                doi:<a href="https://doi.org/10.1007/s00285-019-01326-7" target="_blank">10.1007/s00285-019-01326-7</a>.
+                Also available in <a href="https://arxiv.org/abs/190054" target="_blank">Arxiv</a>.</li>
                 
-            <li>Strong convergence of the symmetrized Milstein scheme for some CEV-like SDEs.
+            <li><strong>Strong convergence of the symmetrized Milstein scheme for some CEV-like SDEs.</strong>
                 Bossy, Mireille; Olivero, Héctor.
-                Bernoulli 24 (2018), no. 3, 1995--2042. doi:10.3150/16-BEJ918.
-                Also available in Arxiv. </li>
+                Bernoulli 24 (2018), no. 3, 1995--2042. 
+                doi:<a href="https://doi.org/10.3150/16-BEJ918" target="_blank">10.3150/16-BEJ918</a>.
+                Also available in <a href="https://arxiv.org/abs/160054" target="_blank">Arxiv</a>. </li>
         </ol>
 
         <h2>Preprints</h2>
         <ol reversed>
-            <li>Age-structured stochastic populations under dynamic harvesters' behavior: well-posedness, asymptotic stability and numerically-amenable approximations.
+            <li><strong>Age-structured stochastic populations under dynamic harvesters' behavior: well-posedness, asymptotic stability and numerically-amenable approximations.</strong>
                 M. Isidora Ávila-Thieme, Kerlyns Martínez, Héctor Olivero, Mauricio Tejo, Leonardo Videla
-                Available on <a href="https://arxiv.org/abs/2509.22513">arXiv</a>
+                Available on <a href="https://arxiv.org/abs/2509.22513" target="_blank">arXiv</a>
             </li>
             
-            <li>Wright--Fisher kernels: from linear to non-linear dynamics, ergodicity and McKean--Vlasov scaling limits.
+            <li><strong>Wright--Fisher kernels: from linear to non-linear dynamics, ergodicity and McKean--Vlasov scaling limits.</strong>
                 Cordero, Fernando; Jorquera, Christian; Olivero, Héctor; Videla, Leonardo.
-                Available on on <a href="https://arxiv.org/abs/2410.13107">arXiv</a>.
+                Available on on <a href="https://arxiv.org/abs/2410.13107" target="_blank">arXiv</a> .
             </li>
             
-            <li>Supplementary Material to ``A hypothesis test for the domain of attraction of a random variable''.
-                Olivero, Héctor; Talay Denis. Available in <a href="https://hal.science/hal-04266438/">HAL</a>.
+            <li><strong>Supplementary Material to ``A hypothesis test for the domain of attraction of a random variable''.</strong>
+                Olivero, Héctor; Talay Denis. Available in <a href="https://hal.science/hal-04266438/" target="_blank">HAL</a> .
             </li>
         </ol>
 
