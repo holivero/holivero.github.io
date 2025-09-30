@@ -6,22 +6,54 @@
     <title>Héctor Olivero's personal page</title>
     
     <style>
-        /* 1. Estilos del contenedor principal */
-        .content-container {
-            max-width: 900px; /* Define el ancho máximo del contenido (ajusta este valor si lo deseas) */
-            margin: 0 auto;    /* Centra el contenedor horizontalmente en la pantalla */
-            padding: 0 20px;   /* Añade un pequeño espacio a los lados para que el texto no se pegue al borde */
-            line-height: 1.6;  /* Mejora la legibilidad separando las líneas de texto */
-        }
-        
-        /* Opcional: Estilos para mejorar la legibilidad */
+        /* Estilos generales para el cuerpo de la página */
         body {
             font-family: Arial, sans-serif;
             color: #333;
+            line-height: 1.6; /* Mejora la legibilidad */
+        }
+
+        /* Contenedor principal para limitar el ancho y centrar el contenido */
+        .content-container {
+            max-width: 900px;  /* Ancho máximo del contenido (ajústalo si quieres) */
+            margin: 0 auto;    /* Centra el contenedor horizontalmente */
+            padding: 20px;     /* Espacio interno alrededor del contenido */
         }
         
+        /* Justificación y alineación del texto */
+        p {
+            text-align: justify; /* ¡Alinea el texto a izquierda y derecha! */
+        }
+
+        /* Estilos para los títulos */
         h1, h2 {
-            color: #0056b3; /* Un color para los títulos */
+            color: #0056b3; 
+        }
+
+        /* Estilos para la imagen de perfil */
+        .profile-image {
+            float: left;        /* Hace que la imagen flote a la izquierda */
+            margin-right: 25px; /* Espacio a la derecha de la imagen para separar del texto */
+            margin-bottom: 15px; /* Espacio debajo de la imagen */
+            max-width: 200px;   /* Ancho máximo de la imagen, ajusta si es necesario */
+            height: auto;       
+            border-radius: 8px; 
+        }
+
+        /* Un 'clear' para asegurar que el contenido posterior no flote junto a la imagen */
+        .clear-float {
+            clear: both; /* Limpia ambos lados del flotado */
+            margin-bottom: 20px; 
+        }
+
+        /* Estilos para los enlaces */
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -30,6 +62,13 @@
     <div class="content-container">
 
         <h1>Héctor Olivero Q.</h1>
+        
+        <img 
+            src="https://via.placeholder.com/200x260?text=Tu+Foto+Aqui" 
+            alt="Retrato de Héctor Olivero Q." 
+            class="profile-image"
+        >
+        
         <p>Currently, I am an Associate Professor at the <a href="http://ingemat.uv.cl/">Mathematical Engineering Institute</a> at Faculty of Engineering at Universidad de Valparaíso (UV) 
             and a member of the research center <a href="https://cimfav.uv.cl/es/"> CIMFAV-UV </a>. Previously, from September of 2017 to July of 2018, I held a Postdoctoral position at INRIA 
             Sophia Antipolis - Méditerranée where my host was Denis Talay. From March 2018 to March 2021 I developed a FONDECYT Postdoctoral 
@@ -38,6 +77,8 @@
         <p> In 2016 I completed my Ph.D. in Mathematical Modeling at Universidad de Chile under the supervision of Joaquin Fontbona. During my Ph.D. thesis 
             I also worked with Mireille Bossy. Before that, in 2011 I completed my Mathematical Engineering degree at Universidad de Chile under the supervision of Joaquin Fontbona.
         </p>
+
+        <div class="clear-float"></div>
 
         <h2>Research projects</h2>
         <p> Currently I am a researcher at the following projects:</p>
