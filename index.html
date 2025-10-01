@@ -12,12 +12,14 @@
             color: #333;
             line-height: 1.6;
             
-            /* --- INICIO DEL CÓDIGO PARA EL FONDO --- */
+            /* --- INICIO DEL CÓDIGO PARA EL FONDO MODIFICADO --- */
             background-image: url('2drw.png'); /* Ruta de la imagen de fondo */
-            background-repeat: no-repeat;    /* Evita que la imagen se repita */
-            background-attachment: fixed;    /* Fija la imagen para que no se mueva al hacer scroll */
-            background-size: cover;          /* Asegura que la imagen cubra todo el fondo sin distorsionarse */
-            background-color: #f0f0f0;       /* Color de respaldo si la imagen no carga */
+            background-repeat: no-repeat;
+            background-attachment: scroll; /* CAMBIO: Ahora se mueve con el scroll */
+            background-size: 100% auto;    /* Ajuste: Cubre el 100% del ancho, manteniendo la proporción (ajusta según necesites) */
+            background-color: #f0f0f0;
+            /* Se puede usar un filtro para atenuar la imagen si solo quieres transparencia sobre el body */
+            /* filter: opacity(0.5); - Opcional, pero dificulta la lectura de todo el texto */
             /* --- FIN DEL CÓDIGO PARA EL FONDO --- */
         }
 
@@ -26,10 +28,10 @@
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
-            /* Se añade un fondo blanco o semi-transparente al contenedor
-               para que el texto sea legible sobre la imagen de fondo */
-            background-color: rgba(255, 255, 255, 0.9); /* Blanco con 90% de opacidad */
-            border-radius: 5px; /* Bordes suaves para el contenedor */
+            /* AJUSTE CLAVE: Hacer el fondo del CONTENEDOR MÁS OPaco (casi sólido) 
+               para asegurar que el texto sea perfectamente legible */
+            background-color: rgba(255, 255, 255, 0.95); /* Blanco con 95% de opacidad (más legible) */
+            border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         
@@ -50,7 +52,12 @@
             margin-bottom: 15px;
             max-width: 200px;
             height: auto;       
-            border-radius: 8px; 
+            
+            /* Recorte rectangular con esquinas suaves */
+            border-radius: 10px; 
+
+            /* Atenuar la imagen de perfil (Ej: 70% de opacidad) */
+            filter: opacity(0.7) brightness(100%); /* CAMBIO: Hace la imagen semi-transparente y normal de brillo */
         }
 
         /* Un 'clear' para asegurar que el contenido posterior no flote junto a la imagen */
@@ -67,6 +74,23 @@
 
         a:hover {
             text-decoration: underline;
+        }
+
+        /* --- ESTILOS PARA EL FOOTER --- */
+        .page-footer {
+            margin-top: 40px;
+            padding: 15px 0;
+            text-align: center;
+            border-top: 1px solid #ccc; /* Línea separadora */
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        .footer-logo {
+            height: 50px; /* Tamaño de los logos, ajusta si es necesario */
+            margin: 0 15px;
+            vertical-align: middle;
+            filter: grayscale(100%); /* Hace los logos grises, opcional */
         }
     </style>
 </head>
@@ -104,7 +128,7 @@
 
         <h2>Publications</h2>
         <ol reversed>
-            <li><strong>A hypothesis test for the domain of attraction of a random variable.</strong> <br>
+            <li><strong>A hypothesis test for the domain of attraction of a random variable.</strong><br>
                 Olivero, Héctor; Talay Denis.<br>
                 ESAIM: PS, 28 (2024) 292-328. 
                 doi: <a href="https://doi.org/10.1051/ps/2024010" target="_blank">https://doi.org/10.1051/ps/2024010</a>. 
@@ -156,5 +180,10 @@
             <li>ANID </li>
         </ul>
 
-    </div> </body>
+        <footer class="page-footer">
+            <p>Affiliations and Support:</p>
+            <img src="uv_logo.png" alt="Logo Universidad de Valparaíso" class="footer-logo">
+            <img src="cimfav_logo.png" alt="Logo CIMFAV-UV" class="footer-logo">
+        </footer>
+        </div> </body>
 </html>
