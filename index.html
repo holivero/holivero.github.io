@@ -12,15 +12,8 @@
             color: #333;
             line-height: 1.6;
             
-            /* --- INICIO DEL CÓDIGO PARA EL FONDO MODIFICADO --- */
-            background-image: url('2drw.png'); /* Ruta de la imagen de fondo */
-            background-repeat: no-repeat;
-            background-attachment: scroll; /* CAMBIO: Ahora se mueve con el scroll */
-            background-size: 100% auto;    /* Ajuste: Cubre el 100% del ancho, manteniendo la proporción (ajusta según necesites) */
-            background-color: #f0f0f0;
-            /* Se puede usar un filtro para atenuar la imagen si solo quieres transparencia sobre el body */
-            /* filter: opacity(0.5); - Opcional, pero dificulta la lectura de todo el texto */
-            /* --- FIN DEL CÓDIGO PARA EL FONDO --- */
+            /* CÓDIGO FONDO: SOLO COLOR DE RESPALDO */
+            background-color: #f0f0f0; /* Color simple para el fondo del navegador */
         }
 
         /* Contenedor principal para limitar el ancho y centrar el contenido */
@@ -28,9 +21,19 @@
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
-            /* AJUSTE CLAVE: Hacer el fondo del CONTENEDOR MÁS OPaco (casi sólido) 
-               para asegurar que el texto sea perfectamente legible */
-            background-color: rgba(255, 255, 255, 0.85); /* Blanco con 95% de opacidad (más legible) */
+            
+            /* --- INICIO DEL CÓDIGO DE FONDO MOVIDO AQUÍ --- */
+            background-image: url('2drw.png'); /* Ruta de la imagen de fondo (AHORA EN EL CONTENEDOR) */
+            background-repeat: no-repeat;
+            background-attachment: scroll; 
+            
+            /* Ajuste de tamaño: cubre todo el contenedor */
+            background-size: cover;          
+            
+            /* Se mantiene el fondo semi-opaco para asegurar la legibilidad del texto */
+            background-color: rgba(255, 255, 255, 0.85); /* La capa blanca semi-transparente sobre la imagen */
+            /* --- FIN DEL CÓDIGO DE FONDO MOVIDO AQUÍ --- */
+            
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
@@ -57,7 +60,7 @@
             border-radius: 10px; 
 
             /* Atenuar la imagen de perfil (Ej: 70% de opacidad) */
-            filter: opacity(0.7) brightness(100%); /* CAMBIO: Hace la imagen semi-transparente y normal de brillo */
+            filter: opacity(0.7) brightness(100%);
         }
 
         /* Un 'clear' para asegurar que el contenido posterior no flote junto a la imagen */
@@ -87,7 +90,7 @@
         }
         
         .footer-logo {
-            height: 50px; /* Tamaño de los logos, ajusta si es necesario */
+            height: 50px; 
             margin: 0 15px;
             vertical-align: middle;
             /*filter: grayscale(100%); /* Hace los logos grises, opcional */
@@ -184,5 +187,7 @@
             <img src="uv_logo.png" alt="Logo Universidad de Valparaíso" class="footer-logo">
             <img src="cimfav_logo.png" alt="Logo CIMFAV-UV" class="footer-logo">
         </footer>
-        </div> </body>
+
+    </div> 
+</body>
 </html>
