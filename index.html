@@ -21,18 +21,25 @@
             margin: 0 auto;
             padding: 20px;
             
-            /* --- INICIO DEL CÓDIGO DE FONDO MODIFICADO --- */
-            background-image: url('2drw.png'); /* Ruta de la imagen de fondo */
+            /* --- INICIO DEL CÓDIGO DE FONDO CORREGIDO --- */
+            /* 1. SE ELIMINA LA PROPIEDAD 'filter' que atenuaba todo el contenido. */
+            
+            /* 2. Se ajusta background-image para usar un GRADIENTE LINEAL (negro 40% transparente)
+               que se superpone a la imagen de fondo, atenuándola SÓLO a ella. */
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), /* Capa oscura y transparente */
+                url('2drw.png'); /* La imagen real */
+
             background-repeat: no-repeat;
             background-attachment: scroll; 
             background-size: cover;          
             
-            /* Filtro para atenuar la imagen de fondo (hacerla más clara y con menos color) */
-            filter: brightness(1.3) grayscale(0.7); /* AUMENTA brillo y REDUCE color. Ajusta los valores */
+            /* 3. Se cambia el background-color para ser completamente blanco (1.0)
+               para que la capa blanca semi-transparente no oscurezca la imagen que ya está atenuada */
+            background-color: rgba(255, 255, 255, 1.0); /* Fondo de color sólido para la legibilidad */
+            background-blend-mode: overlay; /* Permite que el color de fondo y el gradiente se mezclen */
             
-            /* Se mantiene el fondo semi-opaco para asegurar la legibilidad del texto */
-            background-color: rgba(255, 255, 255, 0.9); /* Capa blanca semi-transparente sobre la imagen */
-            /* --- FIN DEL CÓDIGO DE FONDO MODIFICADO --- */
+            /* --- FIN DEL CÓDIGO DE FONDO CORREGIDO --- */
             
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -58,7 +65,7 @@
             
             border-radius: 10px; 
 
-            filter: opacity(0.8) brightness(100%);
+            filter: opacity(0.7) brightness(100%); /* Mantenemos este filtro, pero puedes ajustarlo si quieres */
         }
 
         /* Un 'clear' para asegurar que el contenido posterior no flote junto a la imagen */
