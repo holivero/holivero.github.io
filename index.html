@@ -11,6 +11,14 @@
             font-family: Arial, sans-serif;
             color: #333;
             line-height: 1.6;
+            
+            /* --- INICIO DEL CÓDIGO PARA EL FONDO --- */
+            background-image: url('2drw.png'); /* Ruta de la imagen de fondo */
+            background-repeat: no-repeat;    /* Evita que la imagen se repita */
+            background-attachment: fixed;    /* Fija la imagen para que no se mueva al hacer scroll */
+            background-size: cover;          /* Asegura que la imagen cubra todo el fondo sin distorsionarse */
+            background-color: #f0f0f0;       /* Color de respaldo si la imagen no carga */
+            /* --- FIN DEL CÓDIGO PARA EL FONDO --- */
         }
 
         /* Contenedor principal para limitar el ancho y centrar el contenido */
@@ -18,11 +26,16 @@
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
+            /* Se añade un fondo blanco o semi-transparente al contenedor
+               para que el texto sea legible sobre la imagen de fondo */
+            background-color: rgba(255, 255, 255, 0.9); /* Blanco con 90% de opacidad */
+            border-radius: 5px; /* Bordes suaves para el contenedor */
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         
         /* Justificación y alineación del texto */
         p, li {
-            text-align: justify; /* APLICA JUSTIFICACIÓN A PÁRRAFOS Y LISTAS */
+            text-align: justify;
         }
 
         /* Estilos para los títulos */
@@ -43,7 +56,7 @@
         /* Un 'clear' para asegurar que el contenido posterior no flote junto a la imagen */
         .clear-float {
             clear: both;
-            margin-bottom: 20px;
+            margin-bottom: 20px; 
         }
 
         /* Estilos para los enlaces */
