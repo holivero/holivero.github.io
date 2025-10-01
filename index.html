@@ -11,35 +11,52 @@
             font-family: Arial, sans-serif;
             color: #333;
             line-height: 1.6;
-            
             background-color: #f0f0f0; 
+            /* Importante: permite que el overlay se posicione */
+            position: relative; 
+            min-height: 100vh; /* Asegura que el body tenga al menos la altura de la ventana */
         }
 
+        /* --- NUEVO ESTILO: FONDO Y ATENUACIÓN SEPARADOS --- */
+        /* Contenedor que solo maneja la imagen de fondo y la atenuación */
+        .background-overlay {
+            position: absolute; /* Posicionamiento absoluto para ir detrás */
+            top: 0;
+            /* Se centra usando los márgenes automáticos para que coincida con .content-container */
+            left: 0;
+            right: 0;
+            margin: 0 auto; 
+            
+            width: 100%;
+            /* min-height para que cubra todo el scroll del contenido */
+            min-height: 100%; 
+            max-width: 900px; /* Tamaño del content-container */
+            
+            /* Imagen de fondo */
+            background-image: url('2drw.png'); 
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: scroll;
+            
+            /* Atenuación: Capa blanca semi-transparente que cubre la imagen, atenuándola */
+            background-color: rgba(255, 255, 255, 0.6); /* 60% de opacidad para el blanco */
+            
+            border-radius: 5px; 
+            z-index: 0; /* Asegura que quede en la capa de abajo */
+        }
+        
         /* Contenedor principal para limitar el ancho y centrar el contenido */
         .content-container {
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
             
-            /* --- INICIO DEL CÓDIGO DE FONDO CORREGIDO --- */
-            /* 1. SE ELIMINA LA PROPIEDAD 'filter' que atenuaba todo el contenido. */
+            /* El contenido debe estar enfrente del fondo (z-index) */
+            position: relative; 
+            z-index: 1; 
             
-            /* 2. Se ajusta background-image para usar un GRADIENTE LINEAL (negro 40% transparente)
-               que se superpone a la imagen de fondo, atenuándola SÓLO a ella. */
-            background-image: 
-                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), /* Capa oscura y transparente */
-                url('2drw.png'); /* La imagen real */
-
-            background-repeat: no-repeat;
-            background-attachment: scroll; 
-            background-size: cover;          
-            
-            /* 3. Se cambia el background-color para ser completamente blanco (1.0)
-               para que la capa blanca semi-transparente no oscurezca la imagen que ya está atenuada */
-            background-color: rgba(255, 255, 255, 1.0); /* Fondo de color sólido para la legibilidad */
-            background-blend-mode: overlay; /* Permite que el color de fondo y el gradiente se mezclen */
-            
-            /* --- FIN DEL CÓDIGO DE FONDO CORREGIDO --- */
+            /* Fondo blanco SÓLIDO para máxima legibilidad sobre el fondo atenuado */
+            background-color: rgba(255, 255, 255, 1.0); 
             
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -64,8 +81,9 @@
             height: auto;       
             
             border-radius: 10px; 
-
-            filter: opacity(0.7) brightness(100%); /* Mantenemos este filtro, pero puedes ajustarlo si quieres */
+            
+            /* Mantenemos la opacidad de la foto de perfil */
+            filter: opacity(0.7) brightness(100%);
         }
 
         /* Un 'clear' para asegurar que el contenido posterior no flote junto a la imagen */
@@ -102,6 +120,8 @@
     </style>
 </head>
 <body>
+    
+    <div class="background-overlay"></div>
     
     <div class="content-container">
 
