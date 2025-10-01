@@ -11,55 +11,28 @@
             font-family: Arial, sans-serif;
             color: #333;
             line-height: 1.6;
+            
+            /* FONDO SIMPLE: Solo color plano */
             background-color: #f0f0f0; 
-            /* Importante: permite que el overlay se posicione */
-            position: relative; 
-            min-height: 100vh; /* Asegura que el body tenga al menos la altura de la ventana */
+            position: static; /* Restaurado a la posición normal */
+            margin: 0;
         }
 
-        /* --- NUEVO ESTILO: FONDO Y ATENUACIÓN SEPARADOS --- */
-        /* Contenedor que solo maneja la imagen de fondo y la atenuación */
-        .background-overlay {
-            position: absolute; /* Posicionamiento absoluto para ir detrás */
-            top: 0;
-            /* Se centra usando los márgenes automáticos para que coincida con .content-container */
-            left: 0;
-            right: 0;
-            margin: 0 auto; 
-            
-            width: 100%;
-            /* min-height para que cubra todo el scroll del contenido */
-            min-height: 100%; 
-            max-width: 900px; /* Tamaño del content-container */
-            
-            /* Imagen de fondo */
-            background-image: url('2drw.png'); 
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: scroll;
-            
-            /* Atenuación: Capa blanca semi-transparente que cubre la imagen, atenuándola */
-            background-color: rgba(255, 255, 255, 0.6); /* 60% de opacidad para el blanco */
-            
-            border-radius: 5px; 
-            z-index: 0; /* Asegura que quede en la capa de abajo */
-        }
-        
         /* Contenedor principal para limitar el ancho y centrar el contenido */
         .content-container {
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
             
-            /* El contenido debe estar enfrente del fondo (z-index) */
-            position: relative; 
-            z-index: 1; 
-            
-            /* Fondo blanco SÓLIDO para máxima legibilidad sobre el fondo atenuado */
-            background-color: rgba(255, 255, 255, 1.0); 
+            /* Fondo blanco sólido para la legibilidad */
+            background-color: #ffffff; /* Blanco sólido (sustituye rgba con 1.0) */
             
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            
+            /* Posicionamiento eliminado o restaurado */
+            position: static; 
+            z-index: auto; 
         }
         
         /* Justificación y alineación del texto */
@@ -80,9 +53,10 @@
             max-width: 200px;
             height: auto;       
             
+            /* Recorte rectangular con esquinas suaves */
             border-radius: 10px; 
             
-            /* Mantenemos la opacidad de la foto de perfil */
+            /* Atenuación de la foto de perfil */
             filter: opacity(0.7) brightness(100%);
         }
 
@@ -120,8 +94,6 @@
     </style>
 </head>
 <body>
-    
-    <div class="background-overlay"></div>
     
     <div class="content-container">
 
